@@ -1,7 +1,5 @@
 package com.betsegaw.fe;
 
-import java.math.BigDecimal;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,9 +25,9 @@ public class ForeignExchangeApplication {
 	public CommandLineRunner latestRate(ForeignExchangeRestClient foreignExchangeRestClient) {
 		return args -> {
 			log.info("Latest Euro to Birr rate");
-			log.info("1 Euro is: "+foreignExchangeRestClient.latestRate("ETB")+"Birr");
+			log.info("1 Euro is: "+foreignExchangeRestClient.latestRate("ETB").getRates().get("ETB")+"Birr");
 			log.info("Latest Euro to Dollar rate");
-			log.info("1 Euro is: "+foreignExchangeRestClient.latestRate("USD")+"$");
+			log.info("1 Euro is: "+foreignExchangeRestClient.latestRate("USD").getRates().get("USD")+"$");
 		};
 	}
 

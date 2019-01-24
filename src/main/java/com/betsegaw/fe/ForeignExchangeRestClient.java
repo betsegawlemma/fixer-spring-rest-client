@@ -1,7 +1,5 @@
 package com.betsegaw.fe;
 
-import java.math.BigDecimal;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
