@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Foreign Exchange Rates</title>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="#">
+			<h3>Euro to other countries exchange rate</h3>
+		</a>
+	</nav>
+	<div class="container">
+		<table class="table table-striped">
+		<thead class="thead-dark">
+		<th>Currency</th>
+		<th>Rate</th>
+		</thead>
+		<tbody>
+		<tr th:each="key: ${rates.keySet()}">
+		   <td th:text="${key}">ETB</td>
+		   <td th:text="${rates.get(key)}">32.212</td>
+		</tr>		
+		</tbody>
+		</table>		
+		&copy; 2018 Taco Cloud
+	</div>
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:href="@{/js/jquery-3.3.1.slim.min.js}" src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script th:href="@{/js/popper.min.js}" src="../js/popper.min.js"></script>
+    <script th:href="@{/js/bootstrap.min.js}" src="../js/bootstrap.min.js"></script>
+    <script th:href="@{/js/holder.min.js}" src="../js/holder.min.js"></script>
+</body>
+</html>

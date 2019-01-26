@@ -7,7 +7,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service
 public class ForeignExchangeRestClient {
 	
-	private final String API_ACCESS_KEY = "4f2f2232957061cd29e84bb11e2ff5f9";
+	private final String API_ACCESS_KEY = "18c3928d0dede32f6ddc0d1369bf3513";
 
 	private RestTemplate restTemplate;
 
@@ -16,13 +16,10 @@ public class ForeignExchangeRestClient {
 		this.restTemplate = restTemplate;		
 	}
 	
-	
-	public LatestRate latestRate(String symbols) {
+	public LatestRate latestRate() {
 		
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://data.fixer.io/api/latest")
-				.queryParam("access_key", API_ACCESS_KEY)
-				.queryParam("symbols", symbols);
-		
+				.queryParam("access_key", API_ACCESS_KEY);		
 		return restTemplate.getForObject(builder.toUriString(), LatestRate.class);
 	}
 	
